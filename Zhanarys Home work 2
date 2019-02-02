@@ -1,0 +1,15 @@
+fun count(args : Array<String>): MutableMap<String, Int> {
+    val map = mutableMapOf<String, Int>()
+    for (item in args){
+        if(map.containsKey(item)){
+            map[item] = map.getValue(item) + 1
+        }else{
+            map[item] = 1
+        }
+    }
+    return map
+}
+
+fun main(args : Array<String>) {
+    println (count(arrayOf("banana","apple","orange","banana","orange","orange","orange")))
+}
