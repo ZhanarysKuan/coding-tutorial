@@ -110,3 +110,110 @@ fun count(list: ArrayList<String>): Int {
     }
     return counter
 }
+
+//home work minOf
+fun minOf1(list: List<Int>): Int? {
+    var min = list[0]
+    for (i in list) {
+        if (min > i) min = i
+    }
+    return min
+}
+
+//home work mapOf
+val map = mutableMapOf<String, Int>()
+val strings = arrayOf("banan","banan","apple","banan","apple","orange","kiwi")
+
+fun count(args : Array<String>): MutableMap<String, Int> {
+    for (item in args){
+        if(map.containsKey(item)){
+            map[item] = map.getValue(item) + 1
+        }else{
+            map[item] = 1
+        }
+    }
+    return map
+    
+}
+
+
+fun main(args : Array<String>) {
+    println (count(strings))
+}
+
+//home work minOf with vararg
+@Throws(IllegalArgumentException::class)
+fun minOfVarArg(vararg list:Int):Int  {
+    if (list.isEmpty()) {
+        throw IllegalArgumentException
+    }
+    var min = list[0]
+    for (i in list) {
+        if (i < min) {
+            min = i
+        }
+    }
+    return min
+}
+
+//home work class
+open class Engineer(var name: String, var department: String) {}
+class QA(name: String, department: String) : Engineer (name, department) {
+    fun releaseTesting(releasedate: Int, releasedfunction: ArrayList<String>) : Boolean {
+        if (releasedfunction.size * 2 > releasedate) {
+            return false
+        } else {
+            return true
+        }
+    }
+}
+//home work two strings
+fun twoStrings (str1:String, str2:String): Boolean{
+
+    val l1 = str1.length
+    val l2 = str2.length
+    if (l1 <= 1) {
+        println("l1  less than 1")
+        return false
+    }
+    if (l1 != l2) 
+    {
+        println("Str1 не повторяет Str2")
+        return false
+    }
+
+    val s1 = str1.toLowerCase()
+    val s2 = str2.toLowerCase()
+
+
+    var newString: String
+    for (i in 1 until s1.length) {
+        newString = s1.takeLast(i) + s1.take(l1 - i)
+
+        if (newString == s2) {
+            println("$str2 повторяет $str1")
+            return true
+        }
+    }
+    return false
+}
+
+//home work one string
+fun isUnique(str: String): Boolean {
+    if (str.length == 1) 
+    return true
+    for (a in 0..str.length) {
+        for (element in a + 1..str.length) {
+            if(str[a] == str[element])
+                return false
+        }
+    }
+    return true
+}
+
+//home work swift
+fun swift(strOne: String, strTwo: String) -> Bool {
+    let rotate = {(a: String) -> String in
+        return a.substring(to: a.index(a.startIndex, offsetB))
+    return false
+}
